@@ -11,6 +11,8 @@ import SignIn from './containers/SingIn';
 import Profile from './containers/Profile';
 import Batches from './containers/Batches';
 import NewBatche from './containers/NewBatche';
+import JoinBatche from './containers/JoinBatche';
+import Batche from './containers/Batche';
 import Header from './containers/Header';
 
 const Stack = createStackNavigator();
@@ -49,9 +51,25 @@ const App = () => {
         <Stack.Screen
           name="NewBatche"
           options={{
-            title: 'NewBatche',
+            title: 'Crear tanda',
           }}
           component={NewBatche}
+        />
+
+        <Stack.Screen
+          name="JoinBatche"
+          options={{
+            title: 'Unirme a tanda',
+          }}
+          component={JoinBatche}
+        />
+
+        <Stack.Screen
+          name="Batche"
+          options={{
+            title: 'Detalles',
+          }}
+          component={Batche}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -66,16 +84,16 @@ const Private = ({ navigation }) => (
       <Tab.Screen
         name="Batches"
         component={Batches}
+        onPress={() => console.log('BRANCHES')}
         options={{
-          tabBarLabel: 'Tandas',
+          tabBarLabel: () => null,
           tabBarBadge: 3,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <Icon
               name='account-balance-wallet'
               type='material-icons'
               color={color}
-              size={size}
-              onPress={() => console.log('BRANCHES')}
+              size={35}
             />
           ),
         }}
@@ -84,16 +102,16 @@ const Private = ({ navigation }) => (
       <Tab.Screen
         name="Profile"
         component={Profile}
+        onPress={() => console.log('PROFILE')}
         options={{
-          tabBarLabel: 'Cuenta',
+          tabBarLabel: () => null,
           tabBarBadge: 3,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <Icon
               name='person-pin'
               type='material-icons'
               color={color}
-              size={size}
-              onPress={() => console.log('PROFILE')}
+              size={35}
             />
           ),
         }}

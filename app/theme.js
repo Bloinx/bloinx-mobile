@@ -8,6 +8,9 @@ export const selectionColor = '#407BFF';
 export const assetColor = '#7791D1';
 export const baseColor = '#F8F8F8';
 
+export const lightText = '#FFFFFF';
+export const grayText = '#555555';
+
 export const theme = {
 
 };
